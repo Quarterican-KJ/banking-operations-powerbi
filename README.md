@@ -1,37 +1,91 @@
 # Banking Operations & Portfolio Analytics
 
-A Power BI portfolio project analyzing banking transaction activity, operational performance, customer behavior, and product utilization across a simulated financial institution.
+## About This Project
 
-The project combines **Power Query, DAX, dimensional data modeling, data validation, interactive reporting, and mobile report design** across:
+This is an independent Power BI portfolio project built to demonstrate an end-to-end business intelligence workflow using simulated banking data.
+
+I created the project to extend my professional background in **financial technology, banking data conversion, SQL validation, reconciliation, and production implementation** into business intelligence and data analytics.
+
+My professional experience has included financial-institution data conversions, source-to-target validation, banking systems, financial data reconciliation, and production implementations. This project applies that experience to a modern BI workflow using **Power BI, Power Query, dimensional modeling, DAX, interactive analytics, and mobile report design**.
+
+The objective was not simply to build dashboards, but to demonstrate the process behind a defensible analytical product:
+
+**Profile → Clean → Validate → Model → Calculate → Analyze → Visualize → Test**
+
+> **Power BI Report:** The complete `.pbix` file is included in this repository for technical review in Power BI Desktop.
+
+---
+
+## Contents
+
+- [Project at a Glance](#project-at-a-glance)
+- [Report Preview](#report-preview)
+- [Report Pages](#report-pages)
+- [Key Findings](#key-findings)
+- [Mobile-Optimized Report Design](#mobile-optimized-report-design)
+- [Data Preparation & Quality Assurance](#data-preparation--quality-assurance)
+- [Data Model](#data-model)
+- [Date Dimension](#date-dimension)
+- [DAX & Analytical Measures](#dax--analytical-measures)
+- [Interactive Report Validation](#interactive-report-validation)
+- [Tools & Skills Demonstrated](#tools--skills-demonstrated)
+- [Repository Contents](#repository-contents)
+- [Data Disclaimer](#data-disclaimer)
+
+---
+
+## Project at a Glance
+
+The analytical model contains:
 
 - **250,000 transactions**
 - **15,000 accounts**
 - **10,000 customers**
 - **20 branches**
 - **$411.22M in transaction volume**
+- **January 2024 – August 2026** reporting period
+- **3 desktop report pages**
+- **3 mobile-optimized report layouts**
 
-> **Power BI Report:** The complete `.pbix` file is included in this repository for review in Power BI Desktop.
+The project demonstrates:
+
+- Power Query data preparation
+- Data profiling and validation
+- Dimensional data modeling
+- DAX measure development
+- KPI development
+- Operational and exception analysis
+- Interactive filtering
+- Cross-filter validation
+- Desktop dashboard design
+- Mobile-optimized Power BI design
+- Investigation of ambiguous and incomplete source data
 
 ---
 
-## Project Overview
+## Report Preview
 
-This project was built to demonstrate an end-to-end business intelligence workflow rather than simply create dashboard visuals.
+### Executive Overview
 
-The work included:
+<img width="1297" height="1654" alt="image" src="https://github.com/user-attachments/assets/c857ec20-130f-4849-b699-1958e478a2b4" />
 
-- Data profiling and validation
-- Data cleaning with Power Query
-- Relationship and dimensional model design
-- DAX measure development
-- KPI creation
-- Operational and exception analysis
-- Interactive filtering and cross-filter validation
-- Desktop dashboard design
-- Mobile-optimized report layouts
-- Investigation of ambiguous and incomplete source data
+High-level monitoring of transaction activity, transaction volume, failure rates, branch activity, source systems, and operational exceptions.
 
-The final report contains three analytical pages designed for different levels of investigation, with dedicated desktop and mobile layouts.
+---
+
+### Transaction & Operations Analysis
+
+<img width="1282" height="1660" alt="image" src="https://github.com/user-attachments/assets/23a5be99-cbed-43db-8730-78108bce95b4" />
+
+Operational analysis of branch and transaction-type failure rates, exception reasons, and processing performance.
+
+---
+
+### Customer, Account & Product Analysis
+
+<img width="1270" height="1342" alt="image" src="https://github.com/user-attachments/assets/8fe5de72-3892-4483-8923-265e07427ab7" />
+
+Portfolio analysis covering customers, accounts, banking products, customer segments, risk tiers, and preferred banking channels.
 
 ---
 
@@ -55,7 +109,11 @@ Provides a high-level view of transaction activity and operational performance.
 - Transaction activity by source system
 - Failed, returned, pending, and manual-review transactions
 
-Interactive filters allow analysis by branch, transaction type, and month.
+Interactive filters allow analysis by:
+
+- Branch
+- Transaction Type
+- Year Month
 
 ---
 
@@ -71,9 +129,9 @@ Focuses on operational performance and transaction exceptions.
 - Average processing time by transaction status
 - Branch, date, and transaction-type filtering
 
-One notable finding was that **Pending and Manual Review transactions averaged approximately 123 seconds of processing time compared with roughly 16 seconds for Failed, Returned, and Completed transactions**.
+Pending and Manual Review transactions averaged approximately **123 seconds of processing time**, compared with roughly **16 seconds** for Failed, Returned, and Completed transactions.
 
-The report also identified a **February 2026 increase in failure rate to approximately 2.7%**, substantially above the overall 1.25% baseline.
+The report also identified a **February 2026 failure-rate increase to approximately 2.7%**, compared with the overall 1.25% baseline.
 
 ---
 
@@ -95,7 +153,29 @@ Examines the institution's customer and account portfolio.
 - Customers by segment
 - Customers by preferred banking channel
 
-Interactive filters support segmentation by customer segment, risk tier, and preferred channel.
+Interactive filters support segmentation by:
+
+- Customer Segment
+- Risk Tier
+- Preferred Channel
+
+---
+
+## Key Findings
+
+The analysis surfaced several operational and portfolio patterns:
+
+- Overall transaction failure rate was **1.25%**.
+- February 2026 showed an unusual failure-rate increase to approximately **2.7%**.
+- Branch failure rates ranged from approximately **1.03% to 1.42%**.
+- Transaction-type failure rates ranged from approximately **0.93% to 1.37%**.
+- Pending and Manual Review transactions were associated with approximately **8x longer processing times** than Completed, Failed, and Returned transactions.
+- Digital Banking represented the largest transaction source, followed by Core, Mobile, and Treasury Portal.
+- Consumer Checking represented the largest account product.
+- The customer portfolio was primarily Consumer segment, followed by Small Business and Commercial.
+- Digital was the most common preferred customer banking channel.
+
+These findings are presented as **analytical observations rather than causal conclusions**. The available data supports identifying patterns and anomalies but does not necessarily contain sufficient process history to establish why those patterns occurred.
 
 ---
 
@@ -103,7 +183,7 @@ Interactive filters support segmentation by customer segment, risk tier, and pre
 
 All three report pages include dedicated **mobile-optimized Power BI layouts** in addition to their desktop layouts.
 
-Rather than duplicating the analytical model, the mobile experience reorganizes the existing filters, KPIs, and visualizations for phone-sized viewing while retaining the same underlying DAX measures, relationships, and filter behavior.
+Rather than duplicating the analytical model, the mobile experience reorganizes existing filters, KPIs, and visualizations for phone-sized viewing while retaining the same underlying DAX measures, relationships, and filter behavior.
 
 ### Executive Overview — Mobile
 
@@ -111,11 +191,15 @@ The mobile layout prioritizes:
 
 1. Report title and page context
 2. Branch, transaction type, and month filters
-3. Four primary KPI cards
+3. Primary KPI cards
 4. Monthly transaction and failure-rate trend
 5. Transaction exceptions
 6. Top branches
 7. Transaction activity by source system
+
+<img width="580" height="1047" alt="image" src="https://github.com/user-attachments/assets/b92d15af-4b4b-4ef6-ac24-8398964a65f7" />
+
+---
 
 ### Transaction & Operations Analysis — Mobile
 
@@ -126,6 +210,10 @@ The operational mobile layout prioritizes:
 3. Failure rate by transaction type
 4. Transaction exceptions by failure reason and status
 5. Processing time by transaction status
+
+<img width="562" height="1057" alt="image" src="https://github.com/user-attachments/assets/1f72909c-5da2-4417-bded-f4910844500c" />
+
+---
 
 ### Customer, Account & Product Analysis — Mobile
 
@@ -138,7 +226,9 @@ The customer and portfolio mobile layout prioritizes:
 5. Customers by segment
 6. Customers by preferred channel
 
-The mobile layouts were manually arranged and reviewed for phone-sized presentation rather than relying solely on automatically generated layouts.
+<img width="610" height="1087" alt="image" src="https://github.com/user-attachments/assets/24249bd5-a6a5-44b5-b856-eb2b7cf04851" />
+
+The mobile layouts were **manually arranged and reviewed for phone-sized presentation** rather than relying solely on automatically generated layouts.
 
 ---
 
@@ -148,9 +238,9 @@ Data quality was treated as part of the analysis rather than simply as a preproc
 
 ### Duplicate Investigation
 
-Duplicate transaction IDs were investigated to determine whether they represented conflicting records or exact duplicate records.
+Duplicate Transaction IDs were investigated to determine whether they represented conflicting records or exact duplicate records.
 
-The investigation identified **25 exact duplicate transaction pairs**. Exact duplicate rows were removed, and the cleaned model's validated analytical baseline contains **250,000 unique Transaction IDs**.
+The investigation identified **25 exact duplicate transaction pairs**. Exact duplicate rows were removed, and the cleaned analytical model was validated at **250,000 unique Transaction IDs**.
 
 ### Categorical Data Standardization
 
@@ -175,30 +265,35 @@ Source-system values were standardized to:
 
 Transactions were reconciled against account-level branch assignments.
 
-A Power Query validation confirmed:
+Power Query validation confirmed:
 
 **250,000 / 250,000 transactions matched their account-assigned branch.**
 
-This allowed a redundant direct relationship between Branches and Transactions to be removed, reducing ambiguity in the model.
+This validation allowed a redundant direct relationship between Branches and Transactions to be removed, reducing ambiguity in the model.
 
 ### Exception Data Investigation
 
 Failure-reason data was reconciled against transaction status.
 
-The analysis identified:
+The investigation identified:
 
 - **3,114 failed transactions**
 - **2,294 returned transactions**
 - **58 failed transactions with no recorded failure reason**
 - One completed transaction containing an `Insufficient Funds` failure-reason value
 
-Rather than fabricating corrections for ambiguous source records, the original information was preserved when there was insufficient evidence to determine the correct business interpretation.
+Rather than fabricating corrections for ambiguous source records, the original information was preserved when there was insufficient evidence to determine the appropriate business interpretation.
 
-This reflects a deliberate analytical principle used throughout the project: **investigate anomalies, but do not manufacture data to make the dataset appear cleaner than the available evidence supports.**
+This reflects an analytical principle used throughout the project:
+
+**Investigate anomalies, but do not manufacture data to make the dataset appear cleaner than the available evidence supports.**
 
 ---
 
 ## Data Model
+
+<img width="1572" height="1713" alt="image" src="https://github.com/user-attachments/assets/327cb3c4-c8ad-4d9d-8c25-2256a8b51587" />
+
 
 The report uses a dimensional model connecting:
 
@@ -212,7 +307,7 @@ The report uses a dimensional model connecting:
 
 Accounts serve as the intermediate connection between customer/account attributes and transaction activity.
 
-The final model uses the following primary relationships:
+The primary model relationships are:
 
 - Products → Accounts
 - Customers → Accounts
@@ -221,9 +316,9 @@ The final model uses the following primary relationships:
 - Transaction Types → Transactions
 - Date → Transactions
 
-Relationships were configured as **one-to-many, single-direction relationships** to maintain predictable filter behavior.
+Relationships use **one-to-many, single-direction filtering** to maintain predictable filter behavior.
 
-A redundant direct relationship between Branches and Transactions was removed after branch-level reconciliation demonstrated that transaction branch assignments matched their associated accounts.
+A redundant direct relationship between Branches and Transactions was removed after reconciliation demonstrated that transaction branch assignments matched their associated accounts.
 
 ---
 
@@ -265,7 +360,7 @@ Measures developed for the project include:
 - Active Accounts
 - Accounts per Customer
 
-Example failure-rate measure:
+Example:
 
 ```DAX
 Failure Rate =
@@ -276,17 +371,24 @@ DIVIDE(
 )
 ```
 
-Using `DIVIDE()` provides explicit handling of zero-denominator scenarios.
+`DIVIDE()` provides explicit handling of zero-denominator scenarios.
 
-Measures were tested under increasingly narrow filter contexts to verify that calculations responded correctly to combinations of report filters.
+Measures were tested under increasingly narrow filter contexts to verify that calculations responded correctly to report interactions.
 
 ---
 
 ## Interactive Report Validation
 
-Report interactions were tested using combinations of branch, transaction type, date, customer segment, risk tier, and preferred-channel filters.
+Report interactions were tested using combinations of:
 
-Testing included narrow intersections designed to verify that:
+- Branch
+- Transaction Type
+- Date
+- Customer Segment
+- Risk Tier
+- Preferred Channel
+
+Testing verified that:
 
 - KPI measures recalculated correctly
 - Charts responded to filter context
@@ -294,25 +396,7 @@ Testing included narrow intersections designed to verify that:
 - Exception counts reconciled with underlying records
 - Customer and account measures remained internally consistent
 
-For example, filtering the operational report to **Wichita + ACH Debit + February 2026** produced a narrow 66-transaction population with a **7.58% failure rate**, demonstrating that measures continued to recalculate correctly under highly specific filter contexts.
-
----
-
-## Key Findings
-
-The analysis surfaced several operational patterns:
-
-- Overall transaction failure rate was **1.25%**.
-- February 2026 showed an unusual failure-rate increase to approximately **2.7%**.
-- Branch failure rates ranged from approximately **1.03% to 1.42%**.
-- Transaction-type failure rates ranged from approximately **0.93% to 1.37%**.
-- Pending and Manual Review transactions were associated with approximately **8x longer processing times** than Completed, Failed, and Returned transactions.
-- Digital Banking represented the largest transaction source, followed by Core, Mobile, and Treasury Portal.
-- Consumer Checking represented the largest account product in the portfolio.
-- The customer portfolio was primarily Consumer segment, with Small Business and Commercial customers comprising smaller portions of the population.
-- Digital was the most common preferred customer banking channel.
-
-These findings are presented as **analytical observations rather than causal conclusions**. The available dataset supports identifying patterns and anomalies but does not necessarily contain sufficient process history to establish why those patterns occurred.
+For example, filtering the operational report to **Wichita + ACH Debit + February 2026** produced a narrow population of **66 transactions with a 7.58% failure rate**, demonstrating that measures continued to recalculate correctly under highly specific filter contexts.
 
 ---
 
@@ -323,8 +407,9 @@ These findings are presented as **analytical observations rather than causal con
 - Power BI Desktop
 - Interactive Dashboard Design
 - KPI Development
+- Desktop Report Design
 - Mobile Report Design
-- Desktop and Mobile-Optimized Layouts
+- Mobile-Optimized Layouts
 
 ### Data Preparation
 
@@ -352,25 +437,13 @@ These findings are presented as **analytical observations rather than causal con
 - One-to-Many Relationships
 - Single-Direction Filtering
 
-### Domain
+### Banking & Financial Data
 
 - Banking Operations
 - Transaction Processing
 - Customer & Account Analysis
 - Financial Data Validation
 - Operational Exception Analysis
-
----
-
-## Project Purpose
-
-I created this project to extend my professional background in **financial technology, banking data conversion, SQL validation, and production implementation** into business intelligence and data analytics.
-
-My professional experience has included financial-institution data conversions, source-to-target validation, reconciliation, banking systems, and production implementations. This project applies that experience to a modern BI workflow using **Power BI, Power Query, dimensional modeling, DAX, interactive analytics, and mobile report design**.
-
-The goal was not simply to build a visually complete dashboard, but to demonstrate the process behind a defensible analytical product:
-
-**Profile → Clean → Validate → Model → Calculate → Analyze → Visualize → Test**
 
 ---
 
@@ -388,15 +461,9 @@ Complete Power BI Desktop project containing:
 - Interactive slicers and cross-filtering
 - Three dedicated mobile report layouts
 
-### Report Screenshots
+### Screenshots
 
-Desktop, mobile, and data-model screenshots will be included in this repository to allow the project to be reviewed without requiring Power BI Desktop.
-
----
-
-## Report Preview
-
-Screenshots of the completed report will be added here, including:
+This repository is designed to include:
 
 - Executive Overview — Desktop
 - Transaction & Operations Analysis — Desktop
@@ -408,8 +475,8 @@ Screenshots of the completed report will be added here, including:
 
 ---
 
-## About This Portfolio Project
+## Data Disclaimer
 
-This project uses simulated banking data for portfolio and demonstration purposes.
+This project uses **simulated banking data** for portfolio and demonstration purposes.
 
-It was developed as an independent Power BI project to demonstrate practical skills in **business intelligence, financial data analysis, data quality, dimensional modeling, DAX, Power Query, dashboard development, analytical validation, and mobile report design**.
+It does **not** contain real customer data, proprietary financial-institution data, or confidential employer data.
